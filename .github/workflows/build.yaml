@@ -17,16 +17,21 @@ jobs:
           path: demo.db
       - id: create_release
         run: |
-          gh release create  "release-$(date -u +'%Y%m%d-%H%M')-$(git rev-parse --short=7 HEAD)" \
+          RELEASE_TAG="release-$(date -u +'%Y%m%d-%H%M')-$(git rev-parse --short=7 HEAD)"
+          gh release create "$RELEASE_TAG" \
             --target main \
-            --title "release-$(date -u +'%Y%m%d-%H%M')-$(git rev-parse --short=7 HEAD)" \
+            --title "$RELEASE_TAG" \
             --generate-notes
-          echo "release_id=release-$(date -u +'%Y%m%d-%H%M')-$(git rev-parse --short=7 HEAD)" >> "$GITHUB_OUTPUT"
+          echo "release_id=$RELEASE_TAG" >> "$GITHUB_OUTPUT"
         env:
           GH_TOKEN: ${{ github.token }}
       - name: Upload demo.db to Release
         run: |
-          gh release upload ${{ steps.create_release.outputs.release_id }} demo.db
+          gh release upload ${{ steps.create_release.outputs.release_id }} \
+            demo.db \
+            committee_summary_2024.csv \
+            legislators-current.json \
+            sf-facilities.geojson 
         env:
           GH_TOKEN: ${{ github.token }}
 
