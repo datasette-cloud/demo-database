@@ -18,6 +18,7 @@ jobs:
       - id: create_release
         run: |
           gh release create \
+            --target main \
             --title "release-$(date -u +'%Y%m%d-%H%M')-$(git rev-parse --short=7 HEAD)" \
             --generate-notes
           rid=$(gh release view --json id --jq '.id')
