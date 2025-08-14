@@ -15,14 +15,13 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           path: demo.db
-      - name: Create GitHub Release
-        id: create_release
+      - id: create_release
         run: |
-          RELEASE_ID=$(gh release create \
+          gh release create \
             --title "release-$(date -u +'%Y%m%d-%H%M')-$(git rev-parse --short=7 HEAD)" \
-            --generate-notes \
-            --output json | jq -r '.id')
-          echo "release_id=$RELEASE_ID" >> $GITHUB_OUTPUT
+            --generate-notes
+          rid=$(gh release view --json id --jq '.id')
+          echo "release_id=$rid" >> "$GITHUB_OUTPUT"
         env:
           GH_TOKEN: ${{ github.token }}
       - name: Upload demo.db to Release
