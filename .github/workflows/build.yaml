@@ -17,7 +17,7 @@ jobs:
           path: demo.db
       - id: create_release
         run: |
-          gh release create \
+          gh release create  "release-$(date -u +'%Y%m%d-%H%M')-$(git rev-parse --short=7 HEAD)" \
             --target main \
             --title "release-$(date -u +'%Y%m%d-%H%M')-$(git rev-parse --short=7 HEAD)" \
             --generate-notes
