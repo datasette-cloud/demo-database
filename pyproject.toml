@@ -1,0 +1,11 @@
+[project]
+name = "demo-database"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "httpx>=0.28.1",
+    "solite>=0.0.1a19",
+    "sqlite-utils>=3.38",
+]
