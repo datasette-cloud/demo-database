@@ -70,7 +70,7 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "httpx", specifier = ">=0.28.1" },
-    { name = "solite", specifier = ">=0.0.1a19" },
+    { name = "solite", specifier = ">=0.0.1a23" },
     { name = "sqlite-utils", specifier = ">=3.38" },
 ]
 
@@ -161,10 +161,11 @@ wheels = [
 
 [[package]]
 name = "solite"
-version = "0.0.1a19"
+version = "0.0.1a23"
 source = { registry = "https://pypi.org/simple" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/df/aa/57a7169fd4bb66c41b0b427f5022c316cd229fdce200fa2606221e593151/solite-0.0.1a19-py3-none-macosx_11_0_arm64.whl", hash = "sha256:6ead0406c136349bce1cac4866a3d99f63e1988304a329851d3d77e78af3a7d2", size = 6601431, upload-time = "2025-08-02T06:18:26.692Z" },
+    { url = "https://files.pythonhosted.org/packages/2f/31/5ae996b9dc6372b54f1c9ba5a83338623b8300d36ab8e242783da20eca42/solite-0.0.1a23-py3-none-macosx_11_0_arm64.whl", hash = "sha256:752aa62a4a398076a28199918e400f8e0f61d49dd0cbf4698c730d568c6b22c3", size = 7555528, upload-time = "2025-08-14T00:55:44.069Z" },
+    { url = "https://files.pythonhosted.org/packages/b4/60/488ad525e0af0508ff3e48ca44e7e47a3fe777abcf7994454261b484971d/solite-0.0.1a23-py3-none-manylinux_2_39_x86_64.whl", hash = "sha256:7db8f7bb742a4d4eb3806607e92312066e31d38795fda8e040cd919e127b118c", size = 10920548, upload-time = "2025-08-14T00:55:45.98Z" },
 ]
 
 [[package]]
